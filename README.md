@@ -83,3 +83,4 @@ You can now launch `chat.js` from your T-Embed and start chatting with Groq AI.
 - Your Wispbyte server must remain running while using the script.
 - Keep your Groq API key private. Do not share it publicly.
 - This project currently supports only the **T-Embed** version of Bruce OS.
+ 
