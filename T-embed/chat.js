@@ -2,7 +2,7 @@ var wifi = require("wifi");
 var display = require("display");
 var keyboard = require("keyboard");
 
-var SERVER_URL = "http://YOUR_SERVER_IP:PORT/chat";
+var SERVER_URL = "http://78.154.103.27:13959/chat";
 
 function printWrappedText(text, maxCharsPerLine) {
   var words = text.split(" ");
@@ -23,25 +23,32 @@ function printWrappedText(text, maxCharsPerLine) {
 }
 
 function showResponse(text) {
-  display.fill(display.color(0, 0, 0));
+  var black = display.color(0, 0, 0);
+  var white = display.color(255, 255, 255);
+  var cyan = display.color(0, 255, 255);
+
+  display.fill(black);
   display.setTextSize(1);
 
-  display.setTextColor(display.color(0, 255, 255));
+  display.setTextColor(cyan);
   display.println("--- AI Response ---");
   display.println("");
 
-  display.setTextColor(display.color(255, 255, 255));
+  display.setTextColor(white);
   printWrappedText(text, 24);
 
   display.println("");
-  display.setTextColor(display.color(0, 255, 255));
+  display.setTextColor(cyan);
   display.println("[Press OK to continue]");
 }
 
 function startChat() {
   while (true) {
     var userInput = keyboard.keyboard("", 100, "Prompt AI:");
-    if (!userInput || userInput.length === 0) break;
+
+    if (!userInput || userInput.length === 0) {
+      break;
+    }
 
     display.fill(display.color(0, 0, 0));
     display.setTextColor(display.color(255, 255, 0));
@@ -56,7 +63,11 @@ function startChat() {
     if (response && response.ok) {
       try {
         var data = JSON.parse(response.body);
-        showResponse(data ? data.reply : "Empty response.");
+        if (data && data.reply) {
+          showResponse(data.reply);
+        } else {
+          showResponse("Empty response.");
+        }
       } catch (e) {
         showResponse("JSON Error.");
       }
