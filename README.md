@@ -40,7 +40,10 @@ This command automatically:
 - Installs the required Node.js packages.
 - Installs any dependencies listed in `package.json`.
 - Starts `server.js`.
-start up the wispbyte server
+
+**  start up the wispbyte server!
+**
+
 
 ## 3. Connect to T-embed
 1. Open the webUI
