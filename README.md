@@ -40,13 +40,13 @@ This command automatically:
 - Installs the required Node.js packages.
 - Installs any dependencies listed in `package.json`.
 - Starts `server.js`.
+start up the wispbyte server
 
-### 3. Connect to T-embed
+## 3. Connect to T-embed
 1. Open the webUI
 2. upload `chat.js`
 3. **edit the file: replace "SERVER_URL" with your server IP.** and save
 
-## 4. Use
-start up the wispbyte server, and now u can launch the `chat.js` file in your T-embed and use it freely!
+and now u can launch the `chat.js` file in your T-embed and use it freely!
 
 
