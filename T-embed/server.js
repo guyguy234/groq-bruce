@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// put here your groq API KEY
+
 const apiKey = process.env.GROQ_API_KEY || "API_KEY";
 
 const groq = new Groq({ apiKey: apiKey });
