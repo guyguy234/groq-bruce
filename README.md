@@ -1,3 +1,5 @@
+
+
 # groq-bruce
 
 A connection between the Groq AI API and your Bruce device (currently only compatible with the **T-Embed**), allowing you to use AI anywhere from your device.
