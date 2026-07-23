@@ -41,8 +41,7 @@ This command automatically:
 - Installs any dependencies listed in `package.json`.
 - Starts `server.js`.
 
-**  start up the wispbyte server!
-**
+!start up the wispbyte server!
 
 
 ## 3. Connect to T-embed
